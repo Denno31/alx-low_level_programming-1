@@ -3,14 +3,18 @@
 #include <time.h>
 /**
  * main - Entry point
- *Description: printing value in lower case alphabeticaly
+ * Description: Prints the alphabet in lowercase.
  * Return: Always 0 (Success)
  */
 int main(void)
 {
 	char nody;
 
-	for (nody = 122 ; nody > 96  ; nody--)
+	for (nody = 48 ; nody < 58 ; nody++)
+	{
+	putchar(nody);
+	}
+	for (nody = 97 ; nody < 103 ; nody++)
 	{
 	putchar(nody);
 	}
