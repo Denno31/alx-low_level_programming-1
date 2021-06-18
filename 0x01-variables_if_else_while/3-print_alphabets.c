@@ -8,10 +8,17 @@
  */
 int main(void)
 {
-	char chr;
+	char c;
 
-	for (chr = 'a' ; chr <= 'z' ; chr++)
-		putchar (chr);
-	putchar ('\n');
-	return (0);
+	for (c = 97 ; c < 123 ; c++)
+	{
+	putchar(c);
+	}
+	for (c = 65 ; c < 91 ; c++)
+	{
+	putchar(c);
+	}
+	putchar('\n');
+
+return (0);
 }
