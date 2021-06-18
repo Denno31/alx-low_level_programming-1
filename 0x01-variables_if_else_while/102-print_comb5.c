@@ -1,28 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ * main - Entry point
+ * Description: Prints the alphabet in lowercase.
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int i, j;
-	int a, b, c, d;
+	int ifirst;
+	int i;
+	int jfirst;
+	int j;
 
-	for (i = 0; i < 100; i++)
+	for (ifirst = 48; ifirst < 58; ifirst++)
 	{
-		a = i / 10;
-		b = i % 10;
-		for (j = 0; j < 100; j++)
+		for (i = 48; i < 58; i++)
 		{
-			c = j / 10;
-			d = j % 10;
-			if (a < c || (a == c && b < d))
+			j = i + 1;
+			jfirst = ifirst;
+			for (; jfirst < 58; jfirst++)
 			{
-				putchar(a + '0');
-				putchar(b + '0');
-				putchar(' ');
-				putchar(c + '0');
-				putchar(d + '0');
-				if (!(a == 9 && b == 8))
+				for (; j < 58; j++)
 				{
-				putchar(',');
-				putchar(' ');
+					putchar(ifirst);
+					putchar(i);
+					putchar(' ');
+					putchar(jfirst);
+					putchar(j);
+					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
+				j = 48;
 			}
 		}
 	}
