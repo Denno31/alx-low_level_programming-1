@@ -1,5 +1,3 @@
-lines (14 sloc)  312 Bytes
- 
 #include "holberton.h"
 /**
  * _islower - tests whether a character is a
