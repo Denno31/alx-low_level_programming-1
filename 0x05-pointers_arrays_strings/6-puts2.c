@@ -1,14 +1,20 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
+	* puts2 - updates the value it points to to 98.
+	* @str: a variable as referencia
+	* followed by a new line.
+	* Return: none.
+	*/
+
+void puts2(char *str)
 {
-char *str;
-str = "0123456789";
-puts2(str);
-return (0);
+	int i;
+
+	for (i = 0; str[i] != 0 ; i++)
+	{
+		if (i % 2 == 0)
+		_putchar(str[i]);
+	}
+_putchar('\n');
 }
