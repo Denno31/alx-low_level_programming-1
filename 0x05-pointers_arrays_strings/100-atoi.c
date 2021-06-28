@@ -7,19 +7,19 @@
  */
 int _atoi(char *s)
 {
-	int x, y, z = 0;
+	int i, j, k = 0;
 
-	for ( x = 0 ; s[x] != 0 ; x++ )
+	for ( i = 0 ; s[i] != 0 ; i++ )
 		{
-			if (s[x] == '-')
-			y++;
-			if ((s[x] >= '0') && (s[x] <= '9'))
+			if (s[i] == '-')
+			j++;
+			if ((s[i] >= '0') && (s[i] <= '9'))
 			{
-				s[z] = s[x];
-				z++;
+				s[k] = s[i];
+				k++;
 			}
 		}
-		if (y % 2 == 0)
+		if (j % 2 == 0)
 		return (s)
 		else
 		return (-s);
