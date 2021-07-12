@@ -1,42 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "holberton.h"
 
 /**
- * main - arguments to main
- * @argc: first arg is a count
- * @argv: second arg is a pointer to char
+ * main - Add positive numbers
+ * @argc: The number of command line arguments
+ * @argv: The command line arguments
  *
- * Return: Always 0
+ * Return: 0 if successful, 1 if any arguments are not positive numbers
  */
 int main(int argc, char *argv[])
 {
-	int x, y;
-	int add = 0;
+	int i;
+	unsigned int sum;
 
-	x = 1;
-	while (argv[x])
+	sum = 0;
+	for (i = 1; i < argc; i++)
 	{
-		y = 1;
-		while (argv[x][y])
+		if (is_positive_number(argv[i]))
 		{
-			if ((isdigit(argv[x][y]) == 0))
-			{
-				printf("error\n");
-				return (1);
-			}
-		y++;
+			sum += atoi(argv[i]);
 		}
-	x++;
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-	x = 1;
 
-	while (argv[x] != argv[argc])
+	printf("%u\n", sum);
+
+	return (0);
+}
+
+/**
+ * is_positive_number - Check if a string contains only digits
+ * @number: The string to check
+ *
+ * Return: 1 if string contains only digits, 0 otherwise
+ */
+int is_positive_number(char *number)
+{
+	int i;
+
+	for (i = 0; number[i] != '\0'; i++)
 	{
-		add += atoi(argv[x]);
-		x++;
+		if (!isdigit(number[i]))
+			return (0);
 	}
 
-	printf("%d\n", add);
-return (0);
+	return (1);
 }
