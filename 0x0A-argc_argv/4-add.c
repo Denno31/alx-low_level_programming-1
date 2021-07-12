@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	}
 	x = 1;
 
-	while (argv[i] != argv[argc])
+	while (argv[x] != argv[argc])
 	{
 		add += atoi(argv[x]);
 		x++;
